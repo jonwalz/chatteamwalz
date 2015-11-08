@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chat Team Walz</title>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/master/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+        <link rel="stylesheet" href="./main.css">
+    </head>
+    <body class="animated slideInDown">
+        <nav class="grey darken-3">
+           <div class="nav-wrapper">
+               <ul><li><a href="#" class="blue darken-1 title">Stamplay Realtime Message Board</a></li></ul>
+             <ul class="right">
+               <li><a id="login-button" class="btn blue hoverable">Login With Github</a>&nbsp;&nbsp;</li>
+               <li><a id="logout-button" class="btn grey hoverable">Logout</a></li>
+             </ul>
+           </div>
+         </nav>
+        <div class="row no-margin-bottom">
+            <div class="col m5 s12" style="padding:5%">
+                <form id="new-message">
+                    <div class="input-field">
+                        <textarea id="message-input" class="materialize-textarea" placeholder="Please login to post messages." disabled="true" length="120"></textarea>
+                        <button type="submit" class="btn red lighten-2">Post</button>
+                    </div>
+                </form>
+            </div>
+            <div id="output" class="col l5 offset-l1 m6 s12 virtual-scroll">
+
+            </div>
+        </div>
+        <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/1.2.9/stamplay.min.js"></script>
+        <script src="https://js.pusher.com/3.0/pusher.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
