@@ -1,8 +1,8 @@
 setTimeout(function() {
     $("#title").addClass("animated bounce");
-}, 3000)
+}, 1000)
 // Initialize Your Stamplay App With Your App Id
-Stamplay.init("chatteamwalz");
+Stamplay.init("chatteamwalz2");
 
 // Create an instance of the Stamplay User Model
 var user = new Stamplay.User().Model;
@@ -69,7 +69,9 @@ var feed = new Stamplay.Cobject('message').Collection;
 });
 
 // Create a Pusher Instance
-var pusher = new Pusher('9540fd497bb2120865f3');
+var pusher = new Pusher('8dbe84a925bca08eec06',
+    { encrypted: true }
+  );
 // Listen to a channel
 var channel = pusher.subscribe('public');
 
