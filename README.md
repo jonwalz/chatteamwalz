@@ -1,1 +1,1 @@
-This is a chat room project I created for my family to chat with each other!
+This branch is the progress I have made on building a nicer front end.
