@@ -6,36 +6,77 @@
         <title>Chat Team Walz</title>
         <link rel="stylesheet" type="text/css" href="./css/normalize.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/master/animate.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css">
         <link rel="stylesheet" href="./css/main.css">
+        
     </head>
     <body class="animated slideInDown">
-        <nav class="grey darken-3">
-           <div class="nav-wrapper">
-               <ul><li><a href="#" class="blue darken-1 title">Stamplay Realtime Message Board</a></li></ul>
-             <ul class="right">
-               <li><a id="login-button" class="btn blue hoverable">Login With Github</a>&nbsp;&nbsp;</li>
-               <li><a id="logout-button" class="btn grey hoverable">Logout</a></li>
-             </ul>
-           </div>
-         </nav>
-        <div class="row no-margin-bottom">
-            <div class="col m5 s12" style="padding:5%">
-                <form id="new-message">
-                    <div class="input-field">
-                        <textarea id="message-input" class="materialize-textarea" placeholder="Please login to post messages." disabled="true" length="120"></textarea>
-                        <button type="submit" class="btn red lighten-2">Post</button>
+        <!-- nav bar -->
+        <nav class="menu">
+            <h1 class="name"> CHAT TEAM WALZ</h1>
+            <ul class="inline-list account-action">
+                <li><a href="#" data-reveal-id="myModal" id="logbut">Login</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+                <li><a class="signup" href="#" data-reveal-id="myModal" id="signup">Signup</a></li>
+            </ul>
+            <a class="account hide-for-medium-up" href="#" data-reveal-id="myModal"><i class="fi-unlock"></i></a>
+        </nav>
+        <!-- modal content -->
+        <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="row">
+                <div class="large-6 columns auth-plain">
+                    <div class="signup-panel left-solid">
+                        <p class="welcome">Registered Users</p>
+                        <form>
+                            <div class="row collapse">
+                                <div class="small-2  columns">
+                                    <span class="prefix"><i class="fi-torso-female"></i></span>
+                                </div>
+                                <div class="small-10  columns">
+                                    <input type="text" placeholder="username">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="small-2 columns ">
+                                    <span class="prefix"><i class="fi-lock"></i></span>
+                                </div>
+                                <div class="small-10 columns ">
+                                    <input type="text" placeholder="password">
+                                </div>
+                            </div>
+                        </form>
+                        <a href="#" class="button ">Log In </a>
                     </div>
-                </form>
+                </div>
+                <div class="large-6 columns auth-plain">
+                    <div class="signup-panel newusers">
+                        <p class="welcome"> New User?</p>
+                        <p>Sign up with your email address!</p><br>
+                        <a href="#" class="button ">Sign Up</a>
+                    </div>
+                </div>
             </div>
-            <div id="output" class="col l5 offset-l1 m6 s12 virtual-scroll">
-
-            </div>
+            <a class="close-reveal-modal">&#215;</a>
         </div>
-        <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/1.2.9/stamplay.min.js"></script>
-        <script src="https://js.pusher.com/3.0/pusher.min.js" type="text/javascript"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         
-        <script src="./js/app.js"></script>
-    </body>
+    </nav>
+    <div class="row">
+        <div class="large-6" style="padding:5%">
+            <form id="new-message">
+                <div class="input-field large-12 columns">
+                    <textarea id="message-input" placeholder="Please login to post messages." disabled="true" length="120"></textarea>
+                    <button type="submit" class="btn red lighten-2">Post</button>
+                </div>
+            </form>
+        </div>
+        <div id="output" class="large-6 columns">
+        </div>
+    </div>
+    <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/1.2.9/stamplay.min.js"></script>
+    <script src="https://js.pusher.com/3.0/pusher.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/modal.js"></script>
+</body>
 </html>

@@ -8,7 +8,7 @@ Stamplay.init("chatteamwalz2");
 var user = new Stamplay.User().Model;
 
 // Login Button Event Listner, init Github Login OAuth on "click"
-$('#login-button').on('click',function(){
+$('#logbut').on('click',function(){
     user.login('github');
 })
 
@@ -22,10 +22,11 @@ user.currentUser()
     if(user.isLogged()) {
         $("#message-input").attr("disabled", false)
         $("#message-input").attr("placeholder", "New Message")
-        $("#login-button").hide();
+        $("#logbut").hide();
+        $("#signup").hide();
         $("#logout-button").show();
     } else {
-        $("#login-button").show();
+        $("#logbut").show();
         $("#logout-button").hide();
     }
 })
@@ -53,13 +54,13 @@ var feed = new Stamplay.Cobject('message').Collection;
         var elemStr = "";
       var d = new Date(msg.instance.dt_create);
       msg.instance.date = d.toLocaleString('en-EN').split(",").join("-");
-            elemStr += "<blockquote class='animated slideInRight col s12 z-depth-2 flex grey lighten-3 message'>"
-                elemStr += "<div class='col l2 s3 valign-wrapper'>";
-                    elemStr += "<img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.instance.avatar + "'>";
+            elemStr += "<blockquote class='animated slideInRight small-12 message'>"
+                elemStr += "<div class='smakll-3'>";
+                    elemStr += "<img class='avatar-image' src='" + msg.instance.avatar + "'>";
                 elemStr += "</div>";
-                elemStr += "<div class='col l10 s9 valign-wrapper'>";
-                    elemStr += "<div class='valign'>";
-                        elemStr += "<div class='grey-text text-darken-2 lightweight'>" + msg.instance.comment + "<b>  - " +  msg.instance.username + "</b>" + "</div>";
+                elemStr += "<div class='small-10'>";
+                    elemStr += "<div>";
+                        elemStr += "<div>" + msg.instance.comment + "<b>  - " +  msg.instance.username + "</b>" + "</div>";
                         elemStr += "<small>" + msg.instance.date + "</small>";
                     elemStr += "</div>";
                 elemStr += "</div>";
@@ -81,13 +82,13 @@ channel.bind('message', function(msg) {
     var elemStr = "";
     var d = new Date(msg.dt_create);
         msg.date = d.toLocaleString('en-EN').split(",").join("-");
-        elemStr += "<blockquote class='animated bounceIn col s12 z-depth-2 flex grey lighten-3 message'>"
-            elemStr += "<div class='col l2 s3 valign-wrapper'>";
-                elemStr += "<img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.avatar + "'>";
+        elemStr += "<blockquote class='small-12 message'>"
+            elemStr += "<div class='small-3'>";
+                elemStr += "<img class='responsive-img avatar-image' src='" + msg.avatar + "'>";
             elemStr += "</div>";
-            elemStr += "<div class='col l10 s9 valign-wrapper'>";
-                elemStr += "<div class='valign'>";
-                    elemStr += "<div class='grey-text text-darken-2 lightweight'>" + msg.comment + "<b>  - " +  msg.username + "</b>" + "</div>";
+            elemStr += "<div class='small-9'>";
+                elemStr += "<div>";
+                    elemStr += "<div>" + msg.comment + "<b>  - " +  msg.username + "</b>" + "</div>";
                     elemStr += "<small>" + msg.date + "</small>";
                 elemStr += "</div>";
             elemStr += "</div>";
