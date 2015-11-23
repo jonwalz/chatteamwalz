@@ -3,15 +3,15 @@
 }
 
 body {
-	background-color: #7DA5CC;	
+	background-color: #7DA5CC;
 }
 
-.top-bar, .top-bar-section {
-	background-color: #28547F;	
+.top-bar, .top-bar li, .top-bar ul{
+	background-color: #28547F;
 }
 
 .panel {
 	background-color: #9CCEFF;
 	border-style: none;
-	
+
 }

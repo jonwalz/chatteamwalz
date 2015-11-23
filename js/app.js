@@ -1,3 +1,4 @@
+$(document).foundation();
 setTimeout(function() {
     $("#title").addClass("animated bounce");
 }, 1000)
@@ -53,9 +54,9 @@ var feed = new Stamplay.Cobject('message').Collection;
         var elemStr = "";
       var d = new Date(msg.instance.dt_create);
       msg.instance.date = d.toLocaleString('en-EN').split(",").join("-");
-            elemStr += "<blockquote class='animated slideInRight col s12 z-depth-2 flex grey lighten-3 message'>"
-                elemStr += "<div class='col l2 s3 valign-wrapper'>";
-                    elemStr += "<img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.instance.avatar + "'>";
+            elemStr += "<blockquote class='small-12'>"
+                elemStr += "<div class=''>";
+                    elemStr += "<img class='' id='avatarIcon' src='" + msg.instance.avatar + "'>";
                 elemStr += "</div>";
                 elemStr += "<div class='col l10 s9 valign-wrapper'>";
                     elemStr += "<div class='valign'>";
