@@ -1,4 +1,4 @@
-$(document).foundation();
+
 setTimeout(function() {
     $("#title").addClass("animated bounce");
 }, 1000)
@@ -9,7 +9,7 @@ Stamplay.init("chatteamwalz2");
 var user = new Stamplay.User().Model;
 
 // Login Button Event Listner, init Github Login OAuth on "click"
-$('#login-button').on('click',function(){
+$('#github-login-button').on('click',function(){
     user.login('github');
 })
 
@@ -54,17 +54,17 @@ var feed = new Stamplay.Cobject('message').Collection;
         var elemStr = "";
       var d = new Date(msg.instance.dt_create);
       msg.instance.date = d.toLocaleString('en-EN').split(",").join("-");
-            elemStr += "<blockquote class='small-12'>"
-                elemStr += "<div class=''>";
-                    elemStr += "<img class='' id='avatarIcon' src='" + msg.instance.avatar + "'>";
+            elemStr += "<div class='row'>"
+                elemStr += "<div class='small-2 column'>";
+                    elemStr += "<img class='column' id='avatarIcon' src='" + msg.instance.avatar + "'>";
                 elemStr += "</div>";
-                elemStr += "<div class='col l10 s9 valign-wrapper'>";
+                elemStr += "<div class=''>";
                     elemStr += "<div class='valign'>";
-                        elemStr += "<div class='grey-text text-darken-2 lightweight'>" + msg.instance.comment + "<b>  - " +  msg.instance.username + "</b>" + "</div>";
+                        elemStr += "<div class=''>" + msg.instance.comment + "<b>  - " +  msg.instance.username + "</b>" + "</div>";
                         elemStr += "<small>" + msg.instance.date + "</small>";
                     elemStr += "</div>";
                 elemStr += "</div>";
-            elemStr += "</blockquote>";
+            elemStr += "</div>";
             $("#output").append(elemStr);
     })
 });
@@ -82,16 +82,16 @@ channel.bind('message', function(msg) {
     var elemStr = "";
     var d = new Date(msg.dt_create);
         msg.date = d.toLocaleString('en-EN').split(",").join("-");
-        elemStr += "<blockquote class='animated bounceIn col s12 z-depth-2 flex grey lighten-3 message'>"
-            elemStr += "<div class='col l2 s3 valign-wrapper'>";
-                elemStr += "<img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.avatar + "'>";
+        elemStr += "<div class='row'>"
+            elemStr += "<div class='small-3 column'>";
+                elemStr += "<img class='' src='" + msg.avatar + "'>";
             elemStr += "</div>";
-            elemStr += "<div class='col l10 s9 valign-wrapper'>";
+            elemStr += "<div class='column'>";
                 elemStr += "<div class='valign'>";
-                    elemStr += "<div class='grey-text text-darken-2 lightweight'>" + msg.comment + "<b>  - " +  msg.username + "</b>" + "</div>";
+                    elemStr += "<div class=''>" + msg.comment + "<b>  - " +  msg.username + "</b>" + "</div>";
                     elemStr += "<small>" + msg.date + "</small>";
                 elemStr += "</div>";
             elemStr += "</div>";
-        elemStr += "</blockquote>";
+        elemStr += "</div>";
         $("#output").prepend(elemStr);
 });
