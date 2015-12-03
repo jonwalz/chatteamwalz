@@ -11,11 +11,15 @@ var user = new Stamplay.User().Model;
 // Login Button Event Listner, init Github Login OAuth on "click"
 $('#github-login-button').on('click',function(){
     user.login('github');
-})
+});
+
+$('#email-signup').on('click', function(){
+
+});
 
 $('#logout-button').on('click', function() {
     user.logout();
-})
+});
 
 // Running the currentUser method, onload to check if a user is already signed in.
 user.currentUser()
@@ -59,8 +63,8 @@ var feed = new Stamplay.Cobject('message').Collection;
                     elemStr += "<img class='column' id='avatarIcon' src='" + msg.instance.avatar + "'>";
                 elemStr += "</div>";
                 elemStr += "<div class=''>";
-                    elemStr += "<div class='valign'>";
-                        elemStr += "<div class=''>" + msg.instance.comment + "<b>  - " +  msg.instance.username + "</b>" + "</div>";
+                    elemStr += "<div>";
+                        elemStr += "<div class='username-msg'>" + msg.instance.comment + "<div>  - " + msg.instance.username + "</div>"  + "</div>";
                         elemStr += "<small>" + msg.instance.date + "</small>";
                     elemStr += "</div>";
                 elemStr += "</div>";
@@ -82,13 +86,13 @@ channel.bind('message', function(msg) {
     var elemStr = "";
     var d = new Date(msg.dt_create);
         msg.date = d.toLocaleString('en-EN').split(",").join("-");
-        elemStr += "<div class='row'>"
-            elemStr += "<div class='small-3 column'>";
-                elemStr += "<img class='' src='" + msg.avatar + "'>";
+        elemStr += "<div class='row border-bottom'>"
+            elemStr += "<div class='small-2 column'>";
+                elemStr += "<img class='column' id='avatarIcon' src='" + msg.avatar + "'>";
             elemStr += "</div>";
-            elemStr += "<div class='column'>";
+            elemStr += "<div class=''>";
                 elemStr += "<div class='valign'>";
-                    elemStr += "<div class=''>" + msg.comment + "<b>  - " +  msg.username + "</b>" + "</div>";
+                    elemStr += "<div class='username-msg'>" + msg.comment + "<div>  - " +  msg.username + "</div>" + "</div>";
                     elemStr += "<small>" + msg.date + "</small>";
                 elemStr += "</div>";
             elemStr += "</div>";

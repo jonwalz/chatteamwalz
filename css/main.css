@@ -15,3 +15,7 @@ body {
 	border-style: none;
 
 }
+
+.border-bottom {
+	border-bottom: 1px solid #727272
+}
