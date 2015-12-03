@@ -1,5 +1,5 @@
 * {
-	font-family: 'Oswald', sans-serif;
+	font-family: sans-serif;
 }
 
 body {
@@ -14,4 +14,30 @@ body {
 	background-color: #9CCEFF;
 	border-style: none;
 
+}
+
+#output .row {
+	border-bottom: 1px solid #5B8DA3;
+	padding-bottom: 10px;
+}
+
+#sigphoto {
+	background-color: #7DA5CC;
+	border-radius: 50%;
+	padding-right: 20px;
+	width: 4.5rem;
+}
+
+#avatarIcon {
+	min-width: 66px;
+	margin: 0 20px;
+}
+
+.username-msg {
+	font-weight: 400;
+}
+.username-msg div {
+	text-align: right;
+	font-size: 0.7rem;
+	font-weight: 200;
 }

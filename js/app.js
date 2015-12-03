@@ -64,7 +64,7 @@ var feed = new Stamplay.Cobject('message').Collection;
                 elemStr += "</div>";
                 elemStr += "<div class=''>";
                     elemStr += "<div>";
-                        elemStr += "<div class='username-msg'>" + msg.instance.comment + "<div>  - " + msg.instance.username + "</div>"  + "</div>";
+                        elemStr += "<div class='username-msg small-8 column'>" + msg.instance.comment + "<div>  - " + msg.instance.username + "</div>"  + "</div>";
                         elemStr += "<small>" + msg.instance.date + "</small>";
                     elemStr += "</div>";
                 elemStr += "</div>";
@@ -92,7 +92,7 @@ channel.bind('message', function(msg) {
             elemStr += "</div>";
             elemStr += "<div class=''>";
                 elemStr += "<div class='valign'>";
-                    elemStr += "<div class='username-msg'>" + msg.comment + "<div>  - " +  msg.username + "</div>" + "</div>";
+                    elemStr += "<div class='username-msg small-8 column'>" + msg.comment + "<div>  - " +  msg.username + "</div>" + "</div>";
                     elemStr += "<small>" + msg.date + "</small>";
                 elemStr += "</div>";
             elemStr += "</div>";
