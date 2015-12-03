@@ -27,11 +27,10 @@ user.currentUser()
     if(user.isLogged()) {
         $("#message-input").attr("disabled", false)
         $("#message-input").attr("placeholder", "New Message")
-        $("#logbut").hide();
-        $("#signup").hide();
+        $("#login-button").hide();
         $("#logout-button").show();
     } else {
-        $("#logbut").show();
+        $("#login-button").show();
         $("#logout-button").hide();
     }
 })
@@ -59,7 +58,6 @@ var feed = new Stamplay.Cobject('message').Collection;
         var elemStr = "";
       var d = new Date(msg.instance.dt_create);
       msg.instance.date = d.toLocaleString('en-EN').split(",").join("-");
-<<<<<<< HEAD
             elemStr += "<div class='row'>"
                 elemStr += "<div class='small-2 column'>";
                     elemStr += "<img class='column' id='avatarIcon' src='" + msg.instance.avatar + "'>";
@@ -67,15 +65,6 @@ var feed = new Stamplay.Cobject('message').Collection;
                 elemStr += "<div class=''>";
                     elemStr += "<div>";
                         elemStr += "<div class='username-msg'>" + msg.instance.comment + "<div>  - " + msg.instance.username + "</div>"  + "</div>";
-=======
-            elemStr += "<blockquote class='animated slideInRight small-12 message'>"
-                elemStr += "<div class='smakll-3'>";
-                    elemStr += "<img class='avatar-image' src='" + msg.instance.avatar + "'>";
-                elemStr += "</div>";
-                elemStr += "<div class='small-10'>";
-                    elemStr += "<div>";
-                        elemStr += "<div>" + msg.instance.comment + "<b>  - " +  msg.instance.username + "</b>" + "</div>";
->>>>>>> 44997c211eb50cdd01fc6ff398dea07f73327f95
                         elemStr += "<small>" + msg.instance.date + "</small>";
                     elemStr += "</div>";
                 elemStr += "</div>";
@@ -97,23 +86,13 @@ channel.bind('message', function(msg) {
     var elemStr = "";
     var d = new Date(msg.dt_create);
         msg.date = d.toLocaleString('en-EN').split(",").join("-");
-<<<<<<< HEAD
-        elemStr += "<div class='row border-bottom'>"
+        elemStr += "<div class='row'>"
             elemStr += "<div class='small-2 column'>";
                 elemStr += "<img class='column' id='avatarIcon' src='" + msg.avatar + "'>";
             elemStr += "</div>";
             elemStr += "<div class=''>";
                 elemStr += "<div class='valign'>";
                     elemStr += "<div class='username-msg'>" + msg.comment + "<div>  - " +  msg.username + "</div>" + "</div>";
-=======
-        elemStr += "<blockquote class='small-12 message'>"
-            elemStr += "<div class='small-3'>";
-                elemStr += "<img class='responsive-img avatar-image' src='" + msg.avatar + "'>";
-            elemStr += "</div>";
-            elemStr += "<div class='small-9'>";
-                elemStr += "<div>";
-                    elemStr += "<div>" + msg.comment + "<b>  - " +  msg.username + "</b>" + "</div>";
->>>>>>> 44997c211eb50cdd01fc6ff398dea07f73327f95
                     elemStr += "<small>" + msg.date + "</small>";
                 elemStr += "</div>";
             elemStr += "</div>";
